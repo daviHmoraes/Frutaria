@@ -4,64 +4,56 @@ import java.util.Scanner;
 import model.Fruta;
 
 public class Atendente {
-	Scanner input;
-
-	public Atendente() {
-		input = new Scanner(System.in);
-	}
+	Scanner input = new Scanner(System.in);
 
 	public int menuPrincipal() {
 		System.out.println("1 - Cadastrar fruta");
-		System.out.println("2 - Listar frutas");
-		System.out.println("3 - Remover fruta");
+		System.out.println("2 - Cadastrar verdura");
+		System.out.println("3 - Listar frutas");
+		System.out.println("4 - Listar verdura");
+		System.out.println("5 - Remover fruta");
+		System.out.println("6 - Remover verdura");
 		System.out.println("0 - Sair");
 		System.out.print("Escolha uma opção: ");
 		int opcao = input.nextInt();
-		input.nextLine();
+		input.nextLine(); // Limpa o Buffer
 		return opcao;
 	}
+	
+	public double lerPeso() {
+		System.out.print("Digite o peso: ");
+		double peso = input.nextDouble();
+		input.nextLine(); // Limpa o Buffer
+		return peso;
+	}
 
-	public String frutaNome() {
-		System.out.print("Digite o nome da fruta:");
+	public String lerNome() {
+		System.out.print("Digite o nome: ");
 		return input.nextLine();
 	}
 
-	public double frutaPreco() {
-		System.out.print("Digite o preço da fruta:");
+	public double lerPreco() {
+		System.out.print("Digite o preço: ");
 		double preco = input.nextDouble();
-		input.nextLine();
+		input.nextLine(); // Limpar o buffer
 		return preco;
 	}
 
-	public int frutaQuantidade() {
-		System.out.print("Digite a quantidade:");
+	public int lerQuantidade() {
+		System.out.print("Digite a quantidade: ");
 		int quantidade = input.nextInt();
-		input.nextLine();
+		input.nextLine(); // Limpa o Buffer
 		return quantidade;
 	}
 
-	public void vizualizar(Fruta fruta) {
-		System.out.println("---");
-		System.out.println("Nome: " + fruta.getNome());
-		System.out.println("Preço: R$" + fruta.getPreco());
-		System.out.println("Quantidade: " + fruta.getQuantidade());
-		System.out.println("Código: " + fruta.getCodigo());
-	}
-
-	public String removerFruta() {
-		System.out.println("Digite o nome da fruta a remover:");
+	public String lerTipo() {
+		System.out.print("Digite o tipo: ");
 		return input.nextLine();
 	}
-
-	public void vizualizarFrutaRemovidada(String nome) {
-		System.out.println("A fruta '" + nome + "' foi removida.");
+	
+	public String lerRemover() {
+		System.out.println("Digite o nome a ser removido:");
+		return input.nextLine();
 	}
-
-	public void mensagemNaoEncontrado() {
-		System.out.println("Fruta não encontrada.");
-	}
-
-	public void finalizarApp() {
-		System.out.println("Sistema encerrado.");
-	}
+	
 }
