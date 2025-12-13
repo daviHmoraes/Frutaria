@@ -1,12 +1,12 @@
 package model;
 
-public class Produto {
+public abstract class Produto {
 	
 	protected String nome;
 	protected double preco;
 	protected int quantidade;
 	protected final int codigo;
-	protected static int contadorProduto;
+	protected static int contadorProduto = 1;
 	
 	public Produto() {
 		this.nome = "";
@@ -21,6 +21,8 @@ public class Produto {
 		this.quantidade = quantidade;
 		this.codigo = contadorProduto++;
 	}
+	
+	public abstract String detalhesEspecificos();
 	
 	// Getters e Setters
 

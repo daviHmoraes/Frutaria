@@ -13,6 +13,11 @@ public class Fruta extends Produto {
 		super(nome, preco, quantidade);
 		this.peso = peso;
 	}
+	
+	@Override
+	public String detalhesEspecificos() {
+		return "Peso:       " + peso + " kg";
+	}
 
 	// Getter e Setter
 	

@@ -1,7 +1,8 @@
 package view;
 
-import model.Fruta;
+import model.Produto;
 import model.Verdura;
+import model.Fruta;
 
 public class Mensagem {
 
@@ -17,22 +18,42 @@ public class Mensagem {
 		System.out.println("'" + nome + "' foi removido(a).");
 	}
 
-	public static void vizualizarFruta(Fruta fruta) {
-		System.out.println("--------");
-		System.out.println("Nome: " + fruta.getNome());
-		System.out.println("Preço: R$" + fruta.getPreco());
-		System.out.println("Quantidade: " + fruta.getQuantidade());
-		System.out.println("Peso: " + fruta.getPeso());
-		System.out.println("Código: " + fruta.getCodigo());
+	public static void vizualizarProduto(Produto produto) {
+		System.out.println();
+		System.out.println("=========================================");
+		System.out.println("             DETALHES - Produto          ");
+		System.out.println("=========================================");
+		System.out.println("Nome:       " + produto.getNome());
+		System.out.println("Preço:      R$ " + produto.getPreco());
+		System.out.println("Quantidade: " + produto.getQuantidade());
+		System.out.println(produto.detalhesEspecificos());
+		System.out.println("Código:     " + produto.getCodigo());
+		System.out.println("=========================================");
+	}
+
+	
+	public static void opcaoInvalida() {
+		System.out.println("Opção Inválida!");
 	}
 	
-	public static void vizualizarVerdura(Verdura verdura) {
-		System.out.println("--------");
-		System.out.println("Nome: " + verdura.getNome());
-		System.out.println("Preço: R$" + verdura.getPreco());
-		System.out.println("Quantidade: " + verdura.getQuantidade());
-		System.out.println("Tipo: " + verdura.getTipo());
-		System.out.println("Código: " + verdura.getCodigo());
+	public static void encontrado(String nome) {
+		System.out.println(nome + " encontrado na lista!");
 	}
 	
+	public static void totalFruta(int contador) {
+		System.out.println("A lista possui " + contador + " frutas!");
+	}
+	
+	public static void totalVerdura(int contador) {
+		System.out.println("A lista possui " + contador + " verduras!");
+	}
+
+	public static void totalProduto(int contador) {
+		System.out.println("A lista possui " + contador + " Produtos!");
+	}
+	
+	public static void listaVazia() {
+		System.out.println("A lista está vazia!");
+	}
+		
 }

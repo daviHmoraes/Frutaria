@@ -12,6 +12,11 @@ public class Verdura extends Produto {
 		super(nome, preco, quantidade);
 		this.tipo = tipo;
 	}
+	
+	@Override
+	public String detalhesEspecificos() {
+		return "Tipo:       " + tipo;
+	}
 
 	// Getter e Setter
 
